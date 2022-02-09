@@ -60,11 +60,11 @@ Foam::surfaceTensionModels::constant::~constant()
 
 // * * * * * * * * * * * * * * * Member Functions  * * * * * * * * * * * * * //
 
-//Foam::tmp<Foam::volScalarField>
-//Foam::surfaceTensionModels::constant::sigma() const
-//{
-//    return volScalarField::New(sigma_.name(), mesh_, sigma_);
-//}
+Foam::tmp<Foam::volScalarField>
+Foam::surfaceTensionModels::constant::sigma() const
+{
+    return volScalarField::New(sigma_.name(), mesh_, sigma_);
+}
 
 
 bool Foam::surfaceTensionModels::constant::readDict(const dictionary& dict)
