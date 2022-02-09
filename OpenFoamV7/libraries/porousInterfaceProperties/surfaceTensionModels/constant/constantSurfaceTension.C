@@ -22,7 +22,7 @@ License
     along with OpenFOAM.  If not, see <http://www.gnu.org/licenses/>.
 
 \*---------------------------------------------------------------------------*/
-test
+
 #include "constantSurfaceTension.H"
 #include "volFields.H"
 #include "addToRunTimeSelectionTable.H"
