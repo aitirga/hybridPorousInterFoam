@@ -65,13 +65,9 @@ Foam::surfaceTensionModels::constant::sigma() const
 {
 volScalarField k
 (
-    IOobject
-    (
-        "k",
-        runTime.timeName(),
-        mesh,
-    ),
-    mesh
+    sigma_.name(),
+    mesh_,
+    sigma_
 );
   return k
 //    return volScalarField(sigma_.name(), mesh_, sigma_);
