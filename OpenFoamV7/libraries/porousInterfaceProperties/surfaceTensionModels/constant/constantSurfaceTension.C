@@ -63,8 +63,32 @@ Foam::surfaceTensionModels::constant::~constant()
 Foam::tmp<Foam::volScalarField>
 Foam::surfaceTensionModels::constant::sigma() const
 {
-    return volScalarField(sigma_.name(), mesh_, sigma_);
+volScalarField k
+(
+    IOobject
+    (
+        "k",
+        runTime.timeName(),
+        mesh,
+    ),
+    mesh
+);
+  return k
+//    return volScalarField(sigma_.name(), mesh_, sigma_);
 }
+
+volScalarField k
+(
+    IOobject
+    (
+        "k",
+        runTime.timeName(),
+        mesh,
+        IOobject::MUST_READ,
+        IOobject::AUTO_WRITE
+    ),
+    mesh
+);
 
 
 bool Foam::surfaceTensionModels::constant::readDict(const dictionary& dict)
